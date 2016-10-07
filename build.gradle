@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+    // add the dependencies as needed
+    testCompile group: 'org.testng', name: 'testng', version:'6.8.8'
+    testCompile fileTree('selenium')
+}
+test {
+    useTestNG() {
+        suites 'src/xml/testng.xml'
+    }
+}
